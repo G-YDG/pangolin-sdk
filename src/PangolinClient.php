@@ -14,6 +14,13 @@ class PangolinClient extends FoundationApi
 
     protected $baseUri = 'https://ecom.pangolin-sdk-toutiao.com';
 
+    protected $httpClientDefaultOptions = [
+        'headers' => [
+            'Content-Type' => 'application/json',
+        ],
+        'verify' => false,
+    ];
+
     /**
      * @param string $method
      * @param array $data
@@ -66,11 +73,11 @@ class PangolinClient extends FoundationApi
 
     public function getHttpClientDefaultOptions(): array
     {
-        return [
-            'headers' => [
-                'Content-Type' => 'application/json',
-            ],
-            'verify' => false,
-        ];
+        return $this->httpClientDefaultOptions;
+    }
+
+    public function setHttpClientDefaultOptions(array $httpClientDefaultOptions)
+    {
+        $this->httpClientDefaultOptions = $httpClientDefaultOptions;
     }
 }
