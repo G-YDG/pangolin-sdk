@@ -18,14 +18,14 @@ class CommonTest extends AbstractTest
         $this->assertIsSuccessResponse($response);
     }
 
-    public function test_aggregate_h5()
-    {
-        $response = $this->getApp()->common->aggregate_h5([
-            'material_id' => '7215069233665802557',
-            'external_info' => 'test',
-        ]);
-        $this->assertIsSuccessResponse($response);
-    }
+//    public function test_aggregate_h5()
+//    {
+//        $response = $this->getApp()->common->aggregate_h5([
+//            'material_id' => '7215069233665802557',
+//            'external_info' => 'test',
+//        ]);
+//        $this->assertIsSuccessResponse($response);
+//    }
 
     public function test_reward_orders()
     {

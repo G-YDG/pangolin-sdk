@@ -6,6 +6,7 @@ use Ydg\PangolinSdk\Pangolin;
 abstract class AbstractTest extends TestCase
 {
     protected static $app;
+    protected static $lifeApp;
 
     public function getApp(): Pangolin
     {
@@ -20,6 +21,22 @@ abstract class AbstractTest extends TestCase
         return [
             'app_key' => getenv('APP_KEY'),
             'app_secure' => getenv('APP_SECURE'),
+        ];
+    }
+
+    public function getLifeApp(): Pangolin
+    {
+        if (!(self::$lifeApp instanceof Pangolin)) {
+            self::$lifeApp = new Pangolin($this->getLifeConfig());
+        }
+        return self::$lifeApp;
+    }
+
+    public function getLifeConfig(): array
+    {
+        return [
+            'app_key' => getenv('LIFE_APP_KEY'),
+            'app_secure' => getenv('LIFE_APP_SECURE'),
         ];
     }
 

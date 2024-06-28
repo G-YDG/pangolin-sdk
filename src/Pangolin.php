@@ -11,6 +11,7 @@ use Ydg\FoudationSdk\ServiceContainer;
  * @property Product\Product $product
  * @property Live\Live $live
  * @property Order\Order $order
+ * @property Life\Life $life
  */
 class Pangolin extends ServiceContainer
 {
@@ -19,5 +20,6 @@ class Pangolin extends ServiceContainer
         Product\ServiceProvider::class,
         Live\ServiceProvider::class,
         Order\ServiceProvider::class,
+        Life\ServiceProvider::class,
     ];
 }
