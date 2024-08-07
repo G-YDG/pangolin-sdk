@@ -67,4 +67,14 @@ class LifeTest extends AbstractTest
         ]);
         $this->assertIsSuccessResponse($response);
     }
+
+    public function test_activity_command_share()
+    {
+        $response = $this->getLifeApp()->life->activity_command_share([
+            'distribution_activity_id' => 2,
+            'command_external_info' => 'api_234979',
+            'need_qr_code' => true,
+        ]);
+        $this->assertIsSuccessResponse($response);
+    }
 }

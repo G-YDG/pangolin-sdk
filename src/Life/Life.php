@@ -82,4 +82,20 @@ class Life extends PangolinClient
     {
         return $this->post('/life/order/search', $params);
     }
+
+    /**
+     * 活动转链接口
+     * @param array $params
+     * @return array|null
+     * @example params['distribution_activity_id'] [必填]活动id
+     * @example params['command_external_info'] [非必填]自定义字段，只允许 数字、字母和_，限制长度为40
+     * @example params['need_qr_code'] [非必填]是否需要二维码，默认false
+     * @example params['need_share_link'] [非必填]不支持
+     * @example params['need_zlink'] [非必填]是否返回zlink，默认false
+     * @example params['need_share_command'] [非必填]是否需要口令，默认false
+     */
+    public function activity_command_share(array $params)
+    {
+        return $this->post('/life/activity_command_share', $params);
+    }
 }
