@@ -39,7 +39,7 @@ class PangolinClient extends FoundationApi
 
         $params['sign'] = $this->makeSign($params, $appConfig['app_secure'] ?? '');
         $params['sign_type'] = 'MD5';
-        $params['version'] = '1';
+        $params['version'] = $appConfig['version'] ?? '1';
 
         $response = $this->getHttpClient()->json($this->getUri($method), $params, [
             'headers' => [
